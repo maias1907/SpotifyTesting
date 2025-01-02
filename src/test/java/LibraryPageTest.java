@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class LibraryPageTest {
@@ -43,6 +44,7 @@ public class LibraryPageTest {
 
         assertEquals(expectedPageMessage, pageMessageText);
     }
+
 
     @AfterEach
     public void teardown() {
