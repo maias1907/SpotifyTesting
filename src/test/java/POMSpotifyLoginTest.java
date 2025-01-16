@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.net.MalformedURLException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -21,11 +24,18 @@ public class POMSpotifyLoginTest {
         loginPage = new LoginPage(driver);
     }
 
+
     @Test
     public void testValidLogin() {
         HomePage home = loginPage.loginAsValidUser("user@example.com", "password123");
         assertTrue(home.isLoggedInSuccessfully());
     }
+    @Test
+    public void testInValidLogin() {
+        LoginPage page = loginPage.loginWithInvalidCredentials("wrong", "wrong");
+        assertTrue(page.isLoginFailed());
+    }
+
 
     @AfterEach
     public void tearDown() {

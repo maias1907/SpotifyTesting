@@ -13,6 +13,7 @@ public class LoginPage {
     private By passwordFieldBy = By.id("password");
     private By loginButtonBy = By.cssSelector("button[type='submit']");
 
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
 
@@ -30,4 +31,20 @@ public class LoginPage {
 
         return new HomePage(driver);
     }
+    public LoginPage loginWithInvalidCredentials(String userName, String password){
+        driver.findElement(emailFieldBy).clear();
+        driver.findElement(emailFieldBy).sendKeys(userName);
+        driver.findElement(passwordFieldBy).clear();
+        driver.findElement(passwordFieldBy).sendKeys(password);
+        driver.findElement(loginButtonBy).click();
+        return  new LoginPage(driver) ;
+        }
+    public boolean isLoginFailed(){
+         return driver.getTitle().contains("Login");
+        }
+
+
+
+
+
 }
