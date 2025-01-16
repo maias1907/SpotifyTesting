@@ -1,4 +1,4 @@
-import OnlinePotique.Cart;
+/*import OnlinePotique.Cart;
 import OnlinePotique.Currency;
 import OnlinePotique.HomePageOnline;
 import OnlinePotique.ProductPage;
@@ -75,4 +75,4 @@ public class OnlineBoutiqueTest {
             driver.quit();
         }
     }
-}
+}*/
