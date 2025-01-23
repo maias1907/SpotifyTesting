@@ -35,8 +35,6 @@ jobs:
           java-version: '23'
 
       - name: Run Tests
-        env:
-          BROWSER: ${{ github.event.inputs.browser }}
-          GRID_URL: ${{ github.event.inputs.grid_url }}
+           mvn test -Dtest=**/selenium/*
         run: |
           mvn -q test
