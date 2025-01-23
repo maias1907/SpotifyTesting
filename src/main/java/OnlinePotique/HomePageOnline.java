@@ -1,4 +1,4 @@
-/*package OnlinePotique;
+package OnlinePotique;
 
 import OnlinePotique.ProductPage;
 import org.openqa.selenium.By;
@@ -63,4 +63,4 @@ public class HomePageOnline {
 
         throw new RuntimeException("Product with name '" + productName + "' not found on the Home Page.");
     }
-}*/
+}

@@ -1,4 +1,4 @@
-/*import OnlinePotique.Cart;
+import OnlinePotique.Cart;
 import OnlinePotique.Currency;
 import OnlinePotique.HomePageOnline;
 import OnlinePotique.ProductPage;
@@ -11,10 +11,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
+import static OnlinePotique.DriverFactory.getDriver;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,11 +26,16 @@ public class OnlineBoutiqueTest {
     private HomePageOnline homePage;
    @Before
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://cymbal-shops.retail.cymbal.dev");
-        homePage=new HomePageOnline(driver);
+        //driver = new ChromeDriver();
+        //driver.manage().window().maximize();
+       driver=getDriver();
+       driver.get("https://cymbal-shops.retail.cymbal.dev");
+
+        //PageFactory.initElements(driver,this);
+       homePage=new HomePageOnline(driver);
+
     }
+
 
     @Test
     public void testOrderProductSelect() {
@@ -75,4 +83,4 @@ public class OnlineBoutiqueTest {
             driver.quit();
         }
     }
-}*/
+}
